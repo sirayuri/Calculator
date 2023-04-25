@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="850" Width="450" Background="Gray">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="0,762,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" Height="36" FontSize="22" Background="Black" Foreground="White" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="0,762,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" Height="36" FontSize="22" Background="Black" Foreground="White"/>
         <Button Content="→" HorizontalAlignment="Left" Margin="377,761,0,0" VerticalAlignment="Top" Width="53" FontSize="23" Height="38" Cursor="Hand"/>
 
     </Grid>
