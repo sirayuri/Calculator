@@ -30,6 +30,7 @@ namespace Calculator
             if (e.Key == Key.Enter) 
             {
                 kekka.AppendText(box.Text+"\n");
+                box.Text = "";
             }
         }
     }
