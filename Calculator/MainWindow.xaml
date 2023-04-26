@@ -8,7 +8,7 @@
         ResizeMode="NoResize"
         Title="MyCalculator" Height="850" Width="450" Background="Gray">
     <Grid>
-        <TextBox x:Name="box" HorizontalAlignment="Left" Margin="0,762,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" Height="36" FontSize="22" Background="Black" Foreground="White" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="box" Margin="10,762,88,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" FontSize="22" Background="Black" Foreground="White" KeyDown="TextBox_KeyDown"/>
         <Button Content="→" HorizontalAlignment="Left" Margin="377,761,0,0" VerticalAlignment="Top" Width="53" FontSize="22" Height="38" Cursor="Hand"/>
         <TextBox x:Name="kekka" HorizontalAlignment="Center" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="350" VerticalScrollBarVisibility="Visible" Height="733" VerticalContentAlignment="Top" IsReadOnly="True" FontSize="25"/>
         <!--sss-->
