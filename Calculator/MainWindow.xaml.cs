@@ -33,5 +33,10 @@ namespace Calculator
                 box.Text = "";
             }
         }
+
+        private void box_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
