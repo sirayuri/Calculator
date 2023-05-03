@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,11 +25,36 @@ namespace Calculator
         {
             InitializeComponent();
         }
+        public int[] number = new int[10000];
+        public int ncount = 0;
+        
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                if ($"{i}" == box.Text)
+                {
+                    break;
+                }
+                else
+                {
+                    if(e.Key == Key.P)
+                    {
+                        number[i] = int.Parse(box.Text);
+                        MessageBox.Show($"{number[i]}");
+                        ncount++;
+                    }
+                }
+            }
+
             if (e.Key == Key.Enter) 
             {
+
                 kekka.AppendText(box.Text+"\n");
                 box.Text = "";
             }
