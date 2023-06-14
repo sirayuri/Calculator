@@ -32,11 +32,16 @@ namespace Calculator
                 kekka.AppendText(box.Text+"\n");
                 box.Text = "";
             }
+
+            if (e.KeyData == (Keys.T | Keys.Shift | Keys.Control))
+            {
+                MessageBox.Show("Ctrl + Shift + T");
+            }
         }
 
         private void box_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
     }
 }
