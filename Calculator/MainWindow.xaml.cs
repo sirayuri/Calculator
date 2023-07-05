@@ -27,7 +27,9 @@ namespace Calculator
         }
         public int[] number = new int[10000];
         public int ncount = 0;
-        
+        public int calculation_falg = 0;
+
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -35,33 +37,36 @@ namespace Calculator
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                if ($"{i}" == box.Text)
-                {
-                    break;
-                }
-                else
-                {
-                    if(e.Key == Key.P)
-                    {
-                        number[i] = int.Parse(box.Text);
-                        MessageBox.Show($"{number[i]}");
-                        ncount++;
-                    }
-                }
-            }
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    if ($"{i}" == box.Text)
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        if(e.Key == Key.P)
+            //        {
+            //            number[i] = int.Parse(box.Text);
+            //            MessageBox.Show($"{number[i]}");
+            //            ncount++;
+            //        }
+            //    }
+            //}
 
-            if (e.Key == Key.Enter) 
+            if ((e.Key == Key.Enter) && (calculation_falg == 1))
             {
 
                 kekka.AppendText(box.Text+"\n");
                 box.Text = "";
+                calculation_falg = 0;
             }
 
-            if (e.KeyData == (Keys.T | Keys.Shift | Keys.Control))
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.T)
             {
-                MessageBox.Show("Ctrl + Shift + T");
+                MessageBox.Show("足し算だよ！");
+                box.Text = "";
+                calculation_falg = 1; 
             }
         }
 
@@ -70,4 +75,6 @@ namespace Calculator
             
         }
     }
+
+    public partial class calculation *
 }
