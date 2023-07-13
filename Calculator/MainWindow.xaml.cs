@@ -25,9 +25,7 @@ namespace Calculator
         {
             InitializeComponent();
         }
-        public int[] number = new int[10000];
-        public int ncount = 0;
-        public int calculation_falg = 0;
+        public double ans = 0;
 
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -37,37 +35,20 @@ namespace Calculator
          
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    if ($"{i}" == box.Text)
-            //    {
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        if(e.Key == Key.P)
-            //        {
-            //            number[i] = int.Parse(box.Text);
-            //            MessageBox.Show($"{number[i]}");
-            //            ncount++;
-            //        }
-            //    }
-            //}
 
-            if ((e.Key == Key.Enter) && (calculation_falg == 1))
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.P) //足し算
             {
-
-                kekka.AppendText(box.Text+"\n");
+                ans = ans + double.Parse(box.Text);
+                kekka.AppendText($"{ans} + \n");
                 box.Text = "";
-                calculation_falg = 0;
             }
 
-            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.T)
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.S) //引き算
             {
-                MessageBox.Show("足し算だよ！");
-                box.Text = "";
-                calculation_falg = 1; 
+
             }
+
+
         }
 
         private void box_TextChanged(object sender, TextChangedEventArgs e)
@@ -75,6 +56,4 @@ namespace Calculator
             
         }
     }
-
-    public partial class calculation *
 }
