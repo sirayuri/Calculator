@@ -28,9 +28,10 @@ namespace Calculator
         public double ans = 0;
 
 
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-
+            kekka.AppendText("The firest value is 0\n");
         }
          
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
@@ -39,13 +40,15 @@ namespace Calculator
             if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.P) //足し算
             {
                 ans = ans + double.Parse(box.Text);
-                kekka.AppendText($"{ans} + \n");
+                kekka.AppendText($"{ans}\n");
                 box.Text = "";
             }
 
             if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control && e.Key == Key.S) //引き算
             {
-
+                ans = ans - double.Parse(box.Text);
+                kekka.AppendText($"{ans}\n");
+                box.Text = "";
             }
 
 
