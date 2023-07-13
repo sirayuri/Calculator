@@ -34,7 +34,7 @@ namespace Calculator
         {
 
         }
-
+         
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             //for (int i = 0; i < 10; i++)
