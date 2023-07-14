@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Calculator
 {
@@ -15,7 +16,7 @@ namespace Calculator
         }
         public double ans = 0;
 
-
+        public string com_command = "";
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
@@ -59,7 +60,7 @@ namespace Calculator
                 kekka.ScrollToEnd();
             }
 
-            if(e.Key == Key.Oem1 && Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            if((e.Key == Key.Oem1 && Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))||(e.Key == Key.D8 && Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift)))
             {
                 if(box.Text == "")
                 {
@@ -72,7 +73,7 @@ namespace Calculator
                 kekka.ScrollToEnd();
             }
 
-            if(e.Key == Key.OemQuestion && Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            if((e.Key == Key.OemQuestion && Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))|| e.Key == Key.OemQuestion)
             {
                 if(box.Text == "")
                 {
@@ -90,6 +91,17 @@ namespace Calculator
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
+
+            if(e.Key == Key.Escape)
+            {
+                var command = new command();
+                command.Show();
+            }
+        }
+
+        private void com_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBox.Show("");
         }
 
         private bool IsNumericInput(string input)
