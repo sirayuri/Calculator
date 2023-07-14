@@ -1,7 +1,10 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Text;
 
 namespace Calculator
 {
@@ -18,6 +21,9 @@ namespace Calculator
 
         public string com_command = "";
 
+        public int lineInterval = 1;
+        public int lineSpacing = 0;
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             kekka.AppendText("The firest value is 0\n");
@@ -33,6 +39,7 @@ namespace Calculator
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
+
             //MessageBox.Show(e.Key.ToString());
             if (e.Key == Key.OemPlus) //足し算
             {
@@ -91,23 +98,17 @@ namespace Calculator
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
-
-            if(e.Key == Key.Escape)
-            {
-                var command = new command();
-                command.Show();
-            }
-        }
-
-        private void com_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            MessageBox.Show("");
         }
 
         private bool IsNumericInput(string input)
         {
             // 入力文字列が数字かどうかを判定
             return int.TryParse(input, out _);
+        }
+
+        private void kekka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
     }

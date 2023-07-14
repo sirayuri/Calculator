@@ -9,9 +9,10 @@
         Title="MyCalculator" Height="850" Width="450" Background="Gray"
         Icon="/image/icon1.png">
     <Grid Loaded="Grid_Loaded">
-        <TextBox x:Name="box" Margin="25,763,73,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" FontSize="22" Background="Black" Foreground="White" KeyDown="TextBox_KeyDown" RenderTransformOrigin="0.372,0.862" PreviewTextInput="box_PreviewTextInput"/>
-        <Button Content="→" HorizontalAlignment="Left" Margin="377,761,0,0" VerticalAlignment="Top" Width="53" FontSize="22" Height="38" Cursor="Hand"/>
-        <TextBox x:Name="kekka" HorizontalAlignment="Right" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="390" VerticalScrollBarVisibility="Auto" Height="733" VerticalContentAlignment="Top" IsReadOnly="True" FontSize="25" Margin="0,0,10,0"/>
+        <TextBox x:Name="box" Margin="10,763,84,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" FontSize="22" Background="Black" Foreground="White" KeyDown="TextBox_KeyDown" RenderTransformOrigin="0.372,0.862" PreviewTextInput="box_PreviewTextInput"/>
+        <Button Content="→" HorizontalAlignment="Left" Margin="371,762,0,0" VerticalAlignment="Top" Width="53" FontSize="22" Height="38" Cursor="Hand" RenderTransformOrigin="-0.208,0.527"/>
+        <TextBox x:Name="kekka" HorizontalAlignment="Right" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="390" VerticalScrollBarVisibility="Auto" Height="679" VerticalContentAlignment="Top" IsReadOnly="True" FontSize="25" Margin="0,0,10,0" TextChanged="kekka_TextChanged"/>
+        <TextBox x:Name="command" HorizontalAlignment="Left" Margin="10,714,0,0" TextWrapping="Wrap" Text="Command Line" VerticalAlignment="Top" Width="372" Height="34" RenderTransformOrigin="0.47,0.795" Background="Black" FontSize="20" Foreground="White"/>
         <!--sss-->
     </Grid>
 </Window>
