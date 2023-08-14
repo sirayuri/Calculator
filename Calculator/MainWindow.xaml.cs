@@ -111,6 +111,19 @@ namespace Calculator
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
+
+            if(e.Key == Key.Enter)
+            {
+                if (box.Text == "")
+                {
+                    box.Text = "0";
+                }
+
+                ans = double.Parse(box.Text);
+                kekka.AppendText($"{ans}\n");
+                box.Text = "";
+                kekka.ScrollToEnd();
+            }
         }
 
         private bool IsNumericInput(string input)
