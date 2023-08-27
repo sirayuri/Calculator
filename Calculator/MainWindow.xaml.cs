@@ -52,6 +52,7 @@ namespace Calculator
                 ans = ans + double.Parse(box.Text);
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
 
@@ -66,6 +67,7 @@ namespace Calculator
                 ans = ans - double.Parse(box.Text);
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
 
@@ -80,6 +82,7 @@ namespace Calculator
                 ans = ans * double.Parse(box.Text);
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
 
@@ -100,6 +103,7 @@ namespace Calculator
                 ans = ans / double.Parse(box.Text);
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
 
@@ -114,10 +118,26 @@ namespace Calculator
                 ans = Math.Sqrt(ans);
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
 
-            if(e.Key == Key.Enter)
+            if(e.Key == Key.S)
+            {
+                if (box.Text == "")
+                {
+                    box.Text = "0";
+                }
+
+                kekka.AppendText($"({ans}^2)\n");
+                ans = ans * ans;
+                kekka.AppendText($"Ans = {ans}\n");
+                box.Text = "";
+                kekka.AppendText("\n");
+                kekka.ScrollToEnd();
+            }
+
+            if (e.Key == Key.Enter)
             {
                 if (box.Text == "")
                 {
@@ -127,6 +147,7 @@ namespace Calculator
                 ans = double.Parse(box.Text);
                 kekka.AppendText($"{ans}\n");
                 box.Text = "";
+                kekka.AppendText("\n");
                 kekka.ScrollToEnd();
             }
         }
