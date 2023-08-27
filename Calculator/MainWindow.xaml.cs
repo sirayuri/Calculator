@@ -48,8 +48,9 @@ namespace Calculator
                     box.Text = "0";
                 }
 
+                kekka.AppendText($"({ans} + {box.Text})\n");
                 ans = ans + double.Parse(box.Text);
-                kekka.AppendText($"{ans}\n");
+                kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
@@ -61,8 +62,9 @@ namespace Calculator
                     box.Text = "0";
                 }
 
+                kekka.AppendText($"({ans} - {box.Text})\n");
                 ans = ans - double.Parse(box.Text);
-                kekka.AppendText($"{ans}\n");
+                kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
@@ -74,8 +76,9 @@ namespace Calculator
                     box.Text = "0";
                 }
 
+                kekka.AppendText($"({ans} × {box.Text})\n");
                 ans = ans * double.Parse(box.Text);
-                kekka.AppendText($"{ans}\n");
+                kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
@@ -93,8 +96,9 @@ namespace Calculator
                     return;
                 }
 
+                kekka.AppendText($"({ans} ÷ {box.Text})\n");
                 ans = ans / double.Parse(box.Text);
-                kekka.AppendText($"{ans}\n");
+                kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
@@ -106,8 +110,9 @@ namespace Calculator
                     box.Text = "0";
                 }
 
+                kekka.AppendText($"(√{ans})\n");
                 ans = Math.Sqrt(ans);
-                kekka.AppendText($"{ans}\n");
+                kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.ScrollToEnd();
             }
@@ -130,12 +135,11 @@ namespace Calculator
         {
             // 入力文字列が数字かどうかを判定
             return int.TryParse(input, out _);
-        }
+        } 
 
         private void kekka_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
     }
 }
