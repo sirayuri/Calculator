@@ -111,11 +111,17 @@ namespace Calculator
             {
                 if (box.Text == "")
                 {
-                    box.Text = "0";
+                    kekka.AppendText($"(√{ans})\n");
+                    ans = Math.Sqrt(ans);
+                    kekka.AppendText($"Ans = {ans}\n");
+                    box.Text = "";
+                    kekka.AppendText("\n");
+                    kekka.ScrollToEnd();
+                    return;
                 }
 
-                kekka.AppendText($"(√{ans})\n");
-                ans = Math.Sqrt(ans);
+                kekka.AppendText($"(√{box.Text})\n");
+                ans = Math.Sqrt(double.Parse(box.Text));
                 kekka.AppendText($"Ans = {ans}\n");
                 box.Text = "";
                 kekka.AppendText("\n");
@@ -149,6 +155,39 @@ namespace Calculator
                 box.Text = "";
                 kekka.AppendText("\n");
                 kekka.ScrollToEnd();
+            }
+
+            if(e.Key == Key.M)
+            {
+                if(box.Text == "")
+                {
+                    return;
+                }
+
+                if(box.Text.Substring(0,1) == "-")
+                {
+                    box.Text = box.Text.Remove(0,1);
+                    return;
+                }
+
+                box.Text = "-" + box.Text;
+            }
+
+            if(e.Key == Key.OemPeriod)
+            {
+                if (box.Text == "")
+                {
+                    return;
+                }
+                char pi = '.';
+                if(box.Text.Count(f => (f == pi)) >= 1)
+                {
+                    return;
+                }
+
+                box.AppendText(".");
+                //カレット位置を末尾に移動
+                box.SelectionStart = box.Text.Length;
             }
         }
 
