@@ -120,27 +120,35 @@ namespace Calculator
                     return;
                 }
 
-                kekka.AppendText($"(√{box.Text})\n");
-                ans = Math.Sqrt(double.Parse(box.Text));
-                kekka.AppendText($"Ans = {ans}\n");
-                box.Text = "";
-                kekka.AppendText("\n");
-                kekka.ScrollToEnd();
+                
+                box.Text = (Math.Sqrt(double.Parse(box.Text))).ToString();
             }
 
             if(e.Key == Key.S)
             {
+                //if (box.Text == "")
+                //{
+                //    kekka.AppendText($"({ans}^2)\n");
+                //    ans = ans * ans;
+                //    kekka.AppendText($"Ans = {ans}\n");
+                //    box.Text = "";
+                //    kekka.AppendText("\n");
+                //    kekka.ScrollToEnd();
+                //    return;
+                //}
+
                 if (box.Text == "")
                 {
-                    box.Text = "0";
+                    kekka.AppendText($"({ans}^2)\n");
+                    ans = ans * ans;
+                    kekka.AppendText($"Ans = {ans}\n");
+                    box.Text = "";
+                    kekka.AppendText("\n");
+                    kekka.ScrollToEnd();
+                    return;
                 }
 
-                kekka.AppendText($"({ans}^2)\n");
-                ans = ans * ans;
-                kekka.AppendText($"Ans = {ans}\n");
-                box.Text = "";
-                kekka.AppendText("\n");
-                kekka.ScrollToEnd();
+                box.Text =  (double.Parse(box.Text) * double.Parse(box.Text)).ToString();
             }
 
             if (e.Key == Key.Enter)
